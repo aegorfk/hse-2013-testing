@@ -15,5 +15,20 @@ namespace Testing
         {
             InitializeComponent();
         }
+
+        LoadTestFromFile Data = new LoadTestFromFile();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                       System.IO.StreamReader(openFileDialog1.FileName, Encoding.Default);
+                if (Data.run(sr))
+                {
+                    button1.Enabled = true;
+                }
+            }
+        }
     }
 }

@@ -36,6 +36,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(74, 95);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 32);
@@ -70,6 +71,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Выбрать тест";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
