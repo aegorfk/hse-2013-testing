@@ -26,9 +26,11 @@ namespace Testing
         {
             int number=0, glava=0, right=0, i=0;
             string vopros="", pict="", check = "/";
+            // до этого, создание листа было вот тут, но тогда в нём были ВООБЩЕ ВСЕ эелементы, они не обнулялись от объекта к объекту (
             while (!input.EndOfStream)
             {
-                List<string> strg = new List<string>();
+                List<string> strg = new List<string>(); // как видно, тут он создаётся при каждом считывании строки
+                //но тогда при переходе от 5-ой к 6-ой строке он, собственно, обнуляется. Помогите Т_Т
                 string str = input.ReadLine();
                 if (i==0)
                 {
@@ -48,6 +50,9 @@ namespace Testing
                 }
                 if (i == 4)
                 {
+                    // вот тут бы его создавать (чтобы он обнулялся только тогда, когда это нужно при считывании уже другого вопроса)
+                    // но тогда проблемы с вызовом этого листа в следующем условии. Я не помню, как решать такие проблемы с разветвелнием if
+                    // может тут switch нужен ??
                     char[] divider = new char[] { '&' };
                     string[] parts = str.Split(divider);
                     foreach (string w in parts)
@@ -57,6 +62,7 @@ namespace Testing
                 }
                 if (i == 5)
                 {
+                    // вот тут вызывается strg при создании объекта класса question, если создавать лист только в if (i == 4), то проблемы с обращением к нему тут.
                     right = Int32.Parse(str);
                     Question qv = new Question();
                     qv.question(pict, glava, number, vopros, right, strg);
