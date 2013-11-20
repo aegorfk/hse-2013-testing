@@ -5,20 +5,57 @@ using System.Text;
 
 namespace Testing
 {
-    class Question
+    public class Question
     {
-        string pict { get; set; }
-        int glava { get; set; }
-        int number { get; set; }
-        List<string> Answers { get; set; }
-        int rightanswer { get; set; }
-        string vopros { get; set; }
+        string pict;
+
+public string Pict
+{
+  get { return pict; }
+  set { pict = value; }
+}
+        int glava;
+        
+
+public int Glava
+{
+  get { return glava; }
+  set { glava = value; }
+}
+        int number;
+
+public int Number
+{
+    get { return number; }
+    set { number = value; }
+}
+        List<string> Answers;
+
+public List<string> answers
+{
+    get { return Answers; }
+    set { Answers = value; }
+}
+        int rightanswer;
+
+public int Rightanswer
+{
+    get { return rightanswer; }
+    set { rightanswer = value; }
+}
+        string vopros;
+
+public string Vopros
+{
+    get { return vopros; }
+    set { vopros = value; }
+}
 
         public void AddAnswers( List<string> list)
         {
             for (int i=0; i<list.Count;i++)
             {
-                this.Answers.Add(list[i]); // будет ли работать с этим методом, или нужно прописать код в question
+                this.Answers.Add(list[i]);
             }
         }
 
@@ -31,11 +68,6 @@ namespace Testing
             this.vopros = que;
             this.Answers = new List<string>();
             AddAnswers(str);
-            //AddAnswers(str);
-            //for (int i = 0; i < str.Count; i++)
-            //{
-            //    this.Answers.Add(str[i]); // будет ли работать с этим методом, или нужно прописать код в question
-            //}
         }
     }
 }

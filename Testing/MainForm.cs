@@ -27,8 +27,28 @@ namespace Testing
                 if (Data.run(sr))
                 {
                     button1.Enabled = true;
+                    FolderBrowserDialog fbd = new FolderBrowserDialog();
+                    fbd.Description = "Укажите папку с иллюстрациями к тесту";
+                    fbd.ShowNewFolderButton = false;
+                    if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        LoadTestFromFile.Path = fbd.SelectedPath;
+                    }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Вы уверены, что хотите выйти?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Test test = new Test();
+            test.ShowDialog();
         }
     }
 }
