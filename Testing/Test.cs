@@ -66,7 +66,7 @@ namespace Testing
                 int indexVliste = 0;
                 foreach (int p in ChosenAnswers)
                 {
-                    if (p == 7) {otlozheno = true; otlozhen=indexVliste; }
+                    if (p == 7) { otlozheno = true; otlozhen = indexVliste; break; }
                     indexVliste++;
                 }
                 if (otlozheno == false)
