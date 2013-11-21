@@ -14,6 +14,8 @@ namespace Testing
         public static List<Question> VoprosiTesta = new List<Question>(); // здесь записаны вопросы, которые пройдены
         public static List<int> ChosenAnswers = new List<int>(); // здесь записаны данные пользователем ответы
         int i = 1; // кол-во вопросов в тесте (кол-во глав)
+        bool otlozheno = false;
+        int otlozhen=0;
         public Test()
         {
             InitializeComponent();
@@ -57,16 +59,58 @@ namespace Testing
                 }
                 catch { MessageBox.Show("произошла ошибка при обработке теста", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
-            else { Result r = new Result(); r.ShowDialog(); this.Close(); }
+            else 
+            {
+                ps.Enabled = false;
+                otlozheno = false;
+                int indexVliste = 0;
+                foreach (int p in ChosenAnswers)
+                {
+                    if (p == 7) {otlozheno = true; otlozhen=indexVliste; }
+                    indexVliste++;
+                }
+                if (otlozheno == false)
+                {
+                    Result r = new Result(); r.ShowDialog(); this.Close();
+                }
+                else
+                {
+                    radioButton3.Visible = false;
+                    radioButton4.Visible = false;
+                    radioButton5.Visible = false;
+                    List<string> otveti = new List<string>();
+                    Question q = VoprosiTesta[otlozhen];
+                    pictureBox1.ImageLocation = TestData.SwitchPicture(q);
+                    label1.Text = q.Vopros;
+                    otveti = q.answers;
+                    int HowMuch = otveti.Count;
+                    radioButton1.Text = otveti[0];
+                    radioButton2.Text = otveti[1];
+                    if (HowMuch >= 3) { radioButton3.Text = otveti[2]; radioButton3.Visible = true; }
+                    if (HowMuch >= 4) { radioButton4.Text = otveti[3]; radioButton4.Visible = true; }
+                    if (HowMuch == 5) { radioButton5.Text = otveti[4]; radioButton5.Visible = true; }
+                }
+            }
         }
 
         private void Answering()
         {
-            if (radioButton1.Checked == true) ChosenAnswers.Add(0);
-            if (radioButton2.Checked == true) ChosenAnswers.Add(1);
-            if (radioButton3.Checked == true) ChosenAnswers.Add(2);
-            if (radioButton4.Checked == true) ChosenAnswers.Add(3);
-            if (radioButton5.Checked == true) ChosenAnswers.Add(4);
+            if (otlozheno == false)
+            {
+                if (radioButton1.Checked == true) ChosenAnswers.Add(0);
+                if (radioButton2.Checked == true) ChosenAnswers.Add(1);
+                if (radioButton3.Checked == true) ChosenAnswers.Add(2);
+                if (radioButton4.Checked == true) ChosenAnswers.Add(3);
+                if (radioButton5.Checked == true) ChosenAnswers.Add(4);
+            }
+            else
+            {
+                if (radioButton1.Checked == true) { ChosenAnswers.RemoveAt(otlozhen); ChosenAnswers.Insert(otlozhen, 0); }
+                if (radioButton2.Checked == true) { ChosenAnswers.RemoveAt(otlozhen); ChosenAnswers.Insert(otlozhen, 1); }
+                if (radioButton3.Checked == true) { ChosenAnswers.RemoveAt(otlozhen); ChosenAnswers.Insert(otlozhen, 2); }
+                if (radioButton4.Checked == true) { ChosenAnswers.RemoveAt(otlozhen); ChosenAnswers.Insert(otlozhen, 3); }
+                if (radioButton5.Checked == true) { ChosenAnswers.RemoveAt(otlozhen); ChosenAnswers.Insert(otlozhen, 4); }
+            }
         }
         private void ex_Click(object sender, EventArgs e)
         {
@@ -75,7 +119,14 @@ namespace Testing
 
         private void nx_Click(object sender, EventArgs e)
         {
+
             Answering();
+            SwitchToNext();
+        }
+
+        private void ps_Click(object sender, EventArgs e)
+        {
+            ChosenAnswers.Add(7);
             SwitchToNext();
         }
     }
