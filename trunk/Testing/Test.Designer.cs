@@ -156,6 +156,7 @@
             this.ps.TabIndex = 9;
             this.ps.Text = "ps";
             this.ps.UseVisualStyleBackColor = true;
+            this.ps.Click += new System.EventHandler(this.ps_Click);
             // 
             // ex
             // 
