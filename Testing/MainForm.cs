@@ -35,6 +35,7 @@ namespace Testing
                         LoadTestFromFile.Path = fbd.SelectedPath;
                     }
                 }
+                else MessageBox.Show("Произошла ошибка при загрузке. Проверьте, что файл имеет расширение .txt", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
