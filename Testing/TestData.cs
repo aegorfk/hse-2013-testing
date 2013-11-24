@@ -9,7 +9,7 @@ namespace Testing
     {
         public static string SwitchPicture(Question Q)
         {
-            string path = LoadTestFromFile.Path + "\\" + Q.Pict + ".jpg";
+            string path = LoadTestFromFile.Path + "\\" + Q.Pict;
             return path;
         }
 
