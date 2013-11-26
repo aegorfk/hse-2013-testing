@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestList name="Списки тестов" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration id="6236c43a-ce13-4278-9951-8a364759e4ff" name="Локальные" storage="local.testsettings" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+  <TestList name="Tests" id="cd0d4224-9f6c-4e64-9f75-32c6f73b7008" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <Description>All Tests</Description>
+    <TestLinks>
+      <TestLink id="187a6219-4c63-c037-de67-5bdc1cd52ab8" name="questionTest" storage="questiontest\bin\debug\questiontest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="0cb2a4fd-5ffb-cc90-f521-f96ecf0ac5e3" name="ResultTest" storage="questiontest\bin\debug\questiontest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="53fb33f1-d483-7883-1a0f-8a46e2b38dad" name="GlavTest" storage="questiontest\bin\debug\questiontest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="a25a86e6-ba11-2f26-8387-869b7e71080f" name="SwitchPictureTest" storage="questiontest\bin\debug\questiontest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="f08e47c6-9fcc-79a2-7982-3c49341a1954" name="RightanswerTest" storage="questiontest\bin\debug\questiontest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
+</TestLists>
