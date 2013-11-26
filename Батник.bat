@@ -1,0 +1,4 @@
+call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" x86
+mkdir MyBuild
+csc /target:winexe /out:MyBuild\Program.exe /res:Testing.MainForm.resources /res:Testing.Properties.Resources.resources /res:Testing.Result.resources /res:Testing.Test.resources Testing\LoadTestFromFile.cs Testing\MainForm.cs Testing\MainForm.Designer.cs Testing\Program.cs Testing\Question.cs Testing\Result.cs Testing\Result.Designer.cs Testing\Test.cs Testing\Test.Designer.cs Testing\TestData.cs Testing\Properties\AssemblyInfo.cs Testing\Properties\Resources.Designer.cs Testing\Properties\Settings.Designer.cs
+pause
