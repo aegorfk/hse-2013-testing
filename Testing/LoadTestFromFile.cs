@@ -7,7 +7,7 @@ namespace Testing
 {
     class LoadTestFromFile
     {
-        public static List<Question> Questions = new List<Question>(); // static?
+        public static List<Question> Questions = new List<Question>(); 
         public static string Path;
         public bool run(System.IO.StreamReader input)
         {
