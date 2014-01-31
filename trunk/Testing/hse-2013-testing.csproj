@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="checkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkin.Designer.cs">
+      <DependentUpon>checkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadTestFromFile.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,6 +75,7 @@
     <Compile Include="Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveTestToFile.cs" />
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +83,12 @@
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="TestData.cs" />
+    <EmbeddedResource Include="checkin.resx">
+      <DependentUpon>checkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
